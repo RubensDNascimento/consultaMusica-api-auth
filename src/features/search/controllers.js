@@ -6,6 +6,7 @@ const v = new Validator()
 
 module.exports = {
     search: async ctx =>{
+        console.log('Searching...')
         const { request: { body }, response } = ctx
         const song = await services.search(body)
 

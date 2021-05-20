@@ -9,6 +9,13 @@ const path = require('path');
 const app = new Koa()
 const router = new Router()
 
+const cacheredis = require('koa-redis-cache')
+const cacheOptions = {
+    routes: [{
+        
+    path: '/v1/api/search',
+    }]
+}
 
 module.exports = () => {
 
@@ -27,7 +34,7 @@ module.exports = () => {
         urlencoded: true
     }))*/
     app.use(bodyParser({})).use(koaStatic(
-        path.join(__dirname,"../uploads"))).use(router.routes()).use(router.allowedMethods());
+        path.join(__dirname,"../uploads"))).use(router.routes()).use(cacheredis(cacheOptions)).use(router.allowedMethods());
 
     app.listen(8080)
 }

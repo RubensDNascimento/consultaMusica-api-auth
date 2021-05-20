@@ -23,6 +23,7 @@
         "koa-bodyparser": "^4.3.0",
         "koa-file-uploader": "^1.0.3",
         "koa-formidable": "^1.1.0",
+        "koa-redis-cache": "^3.0.3",
         "koa-router": "^10.0.0",
         "koa-static": "^5.0.0",
         "koa2-multiparty": "^1.0.1",
