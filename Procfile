@@ -1,1 +1,1 @@
-web: nodemon ./src/js/main.js
+web: node ./src/js/main.js
