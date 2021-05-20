@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     year: DataTypes.INTEGER,
     lyrics: DataTypes.TEXT,
     Translation: DataTypes.TEXT,
-    picture: DataTypes.BLOB
+    picture: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Song',

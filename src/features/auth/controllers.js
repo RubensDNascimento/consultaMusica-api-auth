@@ -20,8 +20,13 @@ module.exports = {
 
         const user = await services.auth(body)
         if (user) {
+            if (user.dataValues.role == null) {
+                user.dataValues.role = 'user'
+            }
+            console.log(user)
             response.body = {
-                result: jwt.sign({ email: user.email }, 'meusegredo')
+                role: user.dataValues.role,
+                token: jwt.sign({ email: user.email, role: user.role }, 'Meu super segredo secreto escondido')
             }
         } else {
             response.status = 401

@@ -23,6 +23,7 @@ module.exports = {
         if(song){
             response.body = song
         } else {
+            response.status = 401
             response.body = {result: Boom.badRequest()}
         }
     }
