@@ -36,5 +36,5 @@ module.exports = () => {
     app.use(bodyParser({})).use(koaStatic(
         path.join(__dirname,"../uploads"))).use(router.routes()).use(cacheredis(cacheOptions)).use(router.allowedMethods());
 
-    app.listen(process.env.PORT || 8080)
+    app.listen(process.env.PORT)
 }
